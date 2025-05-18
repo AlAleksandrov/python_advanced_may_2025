@@ -1,8 +1,3 @@
-string = input().split()
-reversed_string = []
+word = list(input())
 
-while string:
-    reversed_string.append(string.pop())
-
-
-print(" ".join(reversed_string))
+print("".join([x for x in reversed(word)]))
