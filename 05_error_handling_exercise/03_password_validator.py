@@ -24,14 +24,10 @@ while True:
     if len(command) < MIN_PASS_LONG:
         raise PasswordTooShortError('Password must contain at least 8 characters')
 
-    has_digit = any(char.isdigit() for char in command)
-    has_letter = any(char.isalpha() for char in command)
-    has_special = any(char in SPECIAL_CHARS for char in command)
-
-    if not (has_digit and has_letter and has_special):
+    if command.isdigit() or command.isalpha() or all(char in SPECIAL_CHARS for char in command):
         raise PasswordTooCommonError('Password must be a combination of digits, letters, and special characters')
 
-    if not has_special:
+    if not any(char in SPECIAL_CHARS for char in command):
         raise PasswordNoSpecialCharactersError('Password must contain at least 1 special character')
 
     if " " in command:
