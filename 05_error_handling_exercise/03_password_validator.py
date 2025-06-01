@@ -28,7 +28,7 @@ while True:
     has_letter = any(char.isalpha() for char in command)
     has_special = any(char in SPECIAL_CHARS for char in command)
 
-    if not (has_digit or has_letter or has_special):
+    if not (has_digit and has_letter and has_special):
         raise PasswordTooCommonError('Password must be a combination of digits, letters, and special characters')
 
     if not has_special:
