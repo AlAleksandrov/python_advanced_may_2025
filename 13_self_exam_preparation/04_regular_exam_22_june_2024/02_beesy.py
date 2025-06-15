@@ -25,8 +25,8 @@ while True:
     if energy > 0:
         command = input()
         coordinates = directions[command]
-        new_row = my_bee_place[0] + coordinates[0]
-        new_col = my_bee_place[1] + coordinates[1]
+        new_row = my_bee_place[0] + coordinates[0] # new_row = (my_bee_place[0] + coordinates[0]) % n !!! formula for row movement
+        new_col = my_bee_place[1] + coordinates[1] # new_col = (my_bee_place[1] + coordinates[1]) % n !!! formula for col movement
 
         energy -= 1
         matrix[my_bee_place[0]][my_bee_place[1]] = "-"
