@@ -72,6 +72,7 @@ while True:
                 break
             else:
                 energy += amount_of_nectar - MAKE_HONEY
+                amount_of_nectar = MAKE_HONEY
                 is_used = True
 
 
