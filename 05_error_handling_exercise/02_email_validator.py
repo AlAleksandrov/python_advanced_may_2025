@@ -25,10 +25,10 @@ while True:
     if len(name) < MIN_NAME_LENGTH:
         raise NameTooShortError("Name must be more than 4 characters")
 
-    if "." not in rest[-1]:
+    if "." not in rest:
         raise InvalidDomainError("Domain must be one of the following: .com, .bg, .org, .net")
 
-    domain = rest[-1].split(".")[-1]
+    domain = rest.split(".")[-1]
     if domain not in CORRECT_DOMAINS:
         raise InvalidDomainError("Domain must be one of the following: .com, .bg, .org, .net")
 
